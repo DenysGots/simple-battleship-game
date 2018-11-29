@@ -1,0 +1,212 @@
+.main {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+    padding: 0;
+}
+
+.board {
+    border-radius: 5px;
+    border: 2px solid #2e2e2e;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    height: auto;
+    padding: 15px;
+    width: auto;
+}
+
+.game-description {
+    border-radius: 5px;
+    border: 2px solid #a21029;
+    color: #2e2e2e;
+    font: 1.5rem georgia, times, serif;
+    margin: 20px auto;
+    max-width: 600px;
+    text-align: left;
+}
+
+.heading_2 {
+    margin: 10px;
+    padding: 0;
+}
+
+.create-board {
+    border-radius: 5px;
+    border: 2px solid #a21029;
+    color: #2e2e2e;
+    font: 1rem georgia, times, serif;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+.create-board_text-field-container,
+.create-board_button-container {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.create-board_text-field {
+    appearance: none;
+    border-radius: 3px;
+    border: 1px solid #969696;
+    color: #2e2e2e;
+    font: 2.0rem georgia, times, serif;
+    line-height: 1.0em;
+    margin: 20px auto;
+    padding: 15px;
+    width: 100px;
+}
+
+.create-board_text-field:focus {
+    border: 0.5px solid #20d6cd;
+    box-shadow: 0 0 10px #20d6cd;
+}
+
+.button {
+    appearance: none;
+    background: none;
+    border: none;
+    font: 1rem georgia, times, serif;
+    margin: 0;
+    outline: none;
+    padding: 0;
+    text-align: center;
+}
+
+.button:hover,
+.button:focus,
+.button:active {
+    appearance: none;
+    outline: none;
+}
+
+.create-board_button,
+.restart-button {
+    border-radius: 5px;
+    border: 1px solid #a21029;
+    box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+    color: #4F4630;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 20px auto;
+    min-height: 60px;
+    min-width: 100px;
+    padding: 0 8px 0 8px;
+    text-transform: uppercase;
+    width: auto;
+}
+
+.create-board_button:hover,
+.restart-button:hover {
+    border: 1px solid #dcdcdc;
+    box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.7);
+    color: #0b5f79;
+    cursor: pointer;
+}
+
+.create-board_button:active,
+.restart-button:active {
+    border: 1px solid #dcdcdc;
+    box-shadow: inset 5px 5px 10px 1px rgba(0, 0, 0, 0.5);
+    color: #0b5f79;
+}
+
+.message-field {
+    align-content: center;
+    align-items: center;
+    border-radius: 5px;
+    border: 2px solid #a21029;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 500px;
+    width: auto;
+}
+
+.message {
+    color: #2e2e2e;
+    font-weight: bold;
+    font: 2rem georgia, times, serif;
+    margin: 10px;
+    text-align: center;
+}
+
+.restart-button-container {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+}
+
+.emptyCell,
+.coordinateCell,
+.cell {
+    height: 50px;
+    margin: 0 -2px -2px 0;
+    padding: 0;
+    width: 50px;
+}
+
+.emptyCell,
+.coordinateCell {
+    border: 2px solid transparent;
+}
+
+.coordinateCell {
+    align-content: center;
+    align-items: center;
+    display: flex;
+    font: 2rem georgia, times, serif;
+    justify-content: center;
+}
+
+.coordinateCellContent {
+    margin: 0;
+    padding: 0;
+}
+
+.cell {
+    border: 2px solid #257c78;
+    transition: ease-in-out 0.1s;
+}
+
+.cell:hover {
+    border: 2px solid #dcdcdc;
+    box-shadow: 7px 7px 15px 1px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.cell:active {
+    border: 2px solid #dcdcdc;
+    box-shadow: inset 5px 5px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+.missCell {
+    background: linear-gradient(135deg, #7d7e7d 0%,#0e0e0e 100%);
+}
+
+.hitCell {
+    background: linear-gradient(135deg, #b4e391 0%,#61c419 50%,#b4e391 100%);
+}
+
+.inactiveCell:hover,
+.inactiveCell:active {
+    border: 2px solid #257c78;
+    box-shadow: none;
+    cursor: default;
+    transition: none;
+}
+
+.hidden {
+    border: none;
+    height: 0;
+    overflow: hidden;
+    position: relative;
+}

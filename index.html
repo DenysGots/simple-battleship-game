@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Task_12</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
+<main>
+    <div class="game-description">
+        <h2 class="heading_2">
+            Game rules:
+        </h2>
+
+        <p>
+            <ul>
+                <li>All ships are one-deck</li>
+                <li>There are no ships in the range of one cell from the current ship</li>
+                <li>Number of ships is one less from the Board size</li>
+            </ul>
+        </p>
+    </div>
+
+    <div class="create-board">
+        <div class="create-board_text-field-container">
+            <input type="text" class="create-board_text-field">
+        </div>
+
+        <div class="create-board_button-container">
+            <button class="button create-board_button">START</button>
+        </div>
+    </div>
+
+    <div class="main hidden">
+        <div class="board">
+        </div>
+    </div>
+
+    <div class="message-field hidden">
+        <p class="message"></p>
+    </div>
+
+    <div class="restart-button-container hidden">
+        <button class="button restart-button">START NEW GAME</button>
+    </div>
+</main>
+</body>
+</html>
