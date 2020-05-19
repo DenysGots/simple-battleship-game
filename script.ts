@@ -1,6 +1,6 @@
-/* TASK 12 */
+shipBattleGame();
 
-const shipBattleGame = function(): void {
+function shipBattleGame(): void {
     let model: any = {};
     let controller: any = {};
     let view: any = {};
@@ -19,8 +19,8 @@ const shipBattleGame = function(): void {
         for (let i = 0; i < model.boardSize; i += 1) {
             for (let j = 0; j < model.boardSize; j += 1) {
                 model.possibleShipsLocations.push([i, j].join(''));
-            };
-        };
+            }
+        }
 
         for (let i = 0; i < model.numShips; i += 1) {
             let randPositionX: number = controller.randCoordinate();
@@ -35,12 +35,12 @@ const shipBattleGame = function(): void {
             if (model.boardSize === 3 && randPositionX === 1 && randPositionY === 1) {
                 randPositionX = controller.randCoordinate();
                 randPositionY = controller.randCoordinate();
-            };
+            }
 
             for (; !controller.checkCoordinateValidity(randPositionX, randPositionY);) {
                 randPositionX = controller.randCoordinate();
                 randPositionY = controller.randCoordinate();
-            };
+            }
 
             model.ships[i] = [randPositionX, randPositionY];
 
@@ -52,17 +52,17 @@ const shipBattleGame = function(): void {
             for (let i = possibleMinX; i <= possibleMaxX; i += 1) {
                 for (let j = possibleMinY; j <= possibleMaxY; j += 1) {
                     model.inaccessibleLocations.push([i, j].join(''));
-                };
-            };
+                }
+            }
 
             for (let i = 0, length = model.possibleShipsLocations.length; i < length; i += 1) {
                 for (let j = 0, length = model.inaccessibleLocations.length; j < length; j += 1) {
                     if (model.possibleShipsLocations[i] === model.inaccessibleLocations[j]) {
                         model.possibleShipsLocations.splice(i, 1);
-                    };
-                };
-            };
-        };
+                    }
+                }
+            }
+        }
     };
 
     controller.setHandlers = function() {
@@ -90,12 +90,12 @@ const shipBattleGame = function(): void {
                     e.target.classList.add("hitCell", "inactiveCell");
                     e.target.removeAttribute("data-has-listener");
                     e.target.removeEventListener("click", controller.listener, false);
-                };
+                }
             });
 
             if (model.hits === 0) {
                 controller.endGame();
-            };
+            }
 
             e.preventDefault();
             e.stopPropagation();
@@ -122,7 +122,7 @@ const shipBattleGame = function(): void {
                 alert(`You've entered wrong input. Please try again!`);
 
                 return location.reload();
-            };
+            }
 
             model.boardSize = boardSize;
 
@@ -161,11 +161,11 @@ const shipBattleGame = function(): void {
         view.cells.forEach(obj => {
             if (obj.hasAttribute("data-has-listener")) {
                 obj.removeEventListener("click", controller.listener, false);
-            };
+            }
 
             if (!obj.classList.contains("inactiveCell")) {
                 obj.classList.add("inactiveCell");
-            };
+            }
         });
 
         view.restartGameSection.classList.remove("hidden");
@@ -197,7 +197,7 @@ const shipBattleGame = function(): void {
 
         for (let i = 0; i < view.gridSize; i += 1) {
             gridColumns += "max-content ";
-        };
+        }
 
         for (let i = 0; i < (view.gridSize - 1); i += 1) {
             let coordinateCell = document.createElement("div");
@@ -206,11 +206,11 @@ const shipBattleGame = function(): void {
 
             coordinateCell.classList.add("coordinateCell");
             coordinateCellContent.classList.add("coordinateCellContent");
-            coordinateCellContent.innerHTML = coordinateCellNumber;
+            coordinateCellContent.innerHTML = String(coordinateCellNumber);
 
             coordinateCell.appendChild(coordinateCellContent);
             fragment.appendChild(coordinateCell);
-        };
+        }
 
         for (let i = 0; i < (view.gridSize - 1); i += 1) {
             let coordinateCell = document.createElement("div");
@@ -219,7 +219,7 @@ const shipBattleGame = function(): void {
 
             coordinateCell.classList.add("coordinateCell");
             coordinateCellContent.classList.add("coordinateCellContent");
-            coordinateCellContent.innerHTML = coordinateCellNumber;
+            coordinateCellContent.innerHTML = String(coordinateCellNumber);
 
             coordinateCell.appendChild(coordinateCellContent);
             fragment.appendChild(coordinateCell);
@@ -229,19 +229,17 @@ const shipBattleGame = function(): void {
                 boardCell.classList.add("cell");
                 boardCell.setAttribute("data-coordinate", `${i}${j}`)
                 fragment.appendChild(boardCell);
-            };
-        };
+            }
+        }
 
         view.board.appendChild(fragment);
 
         view.board.style.gridTemplateColumns = gridColumns;
 
-        view.cells = Array.from(document.getElementsByClassName("cell"));
+        view.cells = (Array as any).from(document.getElementsByClassName("cell"));
 
         view.message.innerHTML = `Choose a cell and click on it`;
     };
 
     controller.createBoard();
-};
-
-shipBattleGame();
+}
